@@ -7,14 +7,14 @@ function setup() {
   // noLoop();
 
   createDiv('Speed');
-  speedSlider = createSlider(0.0, 0.3, 0, 0.0001);
+  speedSlider = createSlider(0.0, 0.3, 0.1, 0.0001);
 
   createDiv('Foreground Colour');
   fgRadio = createRadio('fg');
   fgRadio.option('black', 'Black');
   fgRadio.option('white', 'White');
   fgRadio.option('red', 'Red');
-  fgRadio.selected('white');
+  fgRadio.selected('black');
   createDiv('Foreground Transparency');
   fgAlphaSlider = createSlider(0, 255, 255, 1);
 
@@ -24,7 +24,7 @@ function setup() {
   bgRadio.option('black', 'Black');
   bgRadio.option('white', 'White');
   bgRadio.option('red', 'Red');
-  bgRadio.selected('black');
+  bgRadio.selected('white');
   createDiv('Background Transparency');
   bgAlphaSlider = createSlider(0, 255, 255, 1);
 
@@ -47,7 +47,7 @@ function setup() {
   createDiv('yscatter');
   yscatterSlider = createSlider(0, 20, 0, 1);
   createDiv('density');
-  densitySlider = createSlider(0, 1, 0.8, 0.01);
+  densitySlider = createSlider(0, 1, 0.5, 0.01);
 }
 
 function draw() {
