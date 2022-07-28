@@ -1,7 +1,7 @@
 let t, speed;
 
 function setup() {
-  createCanvas(1000, 500);
+  createCanvas(500, 400);
 
   // smooth(10);
   // noLoop();
