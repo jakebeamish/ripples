@@ -12,6 +12,7 @@ canvas {
 
   padding: 100px;
     padding-top: 50px;
+    padding-bottom: 10000px;
   /* display: block; */
   float: left;
 }
