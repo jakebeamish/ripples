@@ -1,7 +1,7 @@
 let t, speed;
 
 function setup() {
-  createCanvas(500, 400);
+  createCanvas(windowWidth * 0.82, windowHeight);
 
   // smooth(10);
   // noLoop();
@@ -14,7 +14,7 @@ function setup() {
   fgRadio.option('black', 'Black');
   fgRadio.option('white', 'White');
   fgRadio.option('red', 'Red');
-  fgRadio.selected('black');
+  fgRadio.selected('white');
   createDiv('Foreground Transparency');
   fgAlphaSlider = createSlider(0, 255, 255, 1);
 
@@ -24,14 +24,14 @@ function setup() {
   bgRadio.option('black', 'Black');
   bgRadio.option('white', 'White');
   bgRadio.option('red', 'Red');
-  bgRadio.selected('white');
+  bgRadio.selected('black');
   createDiv('Background Transparency');
-  bgAlphaSlider = createSlider(0, 255, 255, 1);
+  bgAlphaSlider = createSlider(0, 255, 80, 1);
 
   createDiv('paths');
   pathsSlider = createSlider(1, 20, 1, 1);
   createDiv('lines');
-  linesSlider = createSlider(1, height * 0.9, 50, 1);
+  linesSlider = createSlider(1, height * 0.9, 100, 1);
   createDiv('xspace');
   xspaceSlider = createSlider(1, 100, 1, 1);
   createDiv('yspace');
@@ -39,7 +39,7 @@ function setup() {
   createDiv('amplitude');
   amplitudeSlider = createSlider(1, height, height/2, 1);
   createDiv('xnoise');
-  xnoiseSlider = createSlider(0, 0.03, 0.01, 0.0001);
+  xnoiseSlider = createSlider(0, 0.03, 0.001, 0.0001);
   createDiv('ynoise');
   ynoiseSlider = createSlider(0, 0.03, 0.02, 0.0001);
   createDiv('xscatter');
@@ -47,7 +47,7 @@ function setup() {
   createDiv('yscatter');
   yscatterSlider = createSlider(0, 20, 0, 1);
   createDiv('density');
-  densitySlider = createSlider(0, 1, 0.5, 0.01);
+  densitySlider = createSlider(0, 1, 0.6, 0.01);
 }
 
 function draw() {
@@ -102,4 +102,9 @@ function draw() {
   // }
 
 
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth * 0.82, windowHeight);
+  draw();
 }
